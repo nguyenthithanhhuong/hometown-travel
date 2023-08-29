@@ -1,0 +1,126 @@
+:root {
+    --header-height: 120px;
+    --color-text: #edf6fd;
+    --color-btn: #fff;
+    --background-color: rgb(80 86 128 / 26%);
+    --btn-color: rgba(80, 86, 128, 0.1);
+}
+
+/* Header section */
+.header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    height: var(--header-height);
+    color: var(--color-text);
+    backdrop-filter: blur(10px);
+    background-color: var(--background-color);
+    box-shadow:  1px 1px 60px 1px var(--background-color);
+}
+
+.page-name {
+    font-size: 4.2rem;
+    font-weight: 600;
+    font-family: Brush Script MT;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 16px;
+}
+
+.navbar-item + .navbar-item{
+    padding-left: 24px;
+}
+
+.navbar-link {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Container section */
+.container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-text);
+}
+
+.background-list {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.background-item {
+    display: none;   
+}
+
+.active {
+    display: block;
+}
+
+.content {
+    z-index: 10;
+    position: absolute;
+    top: var(--header-height); 
+    padding-top: 60px;
+}
+
+.content__title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content__description {
+    font-size: 1.2rem;
+    padding: 18px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.content__button {
+    display: inline-block;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 16px;
+    background-color: var(--color-btn);
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    background-color: var(--btn-color);
+    box-shadow:  2px 2px 8px 2px var(--background-color);
+}
+
+.slide-bar {
+    z-index: 10;
+    display: flex;
+    position: absolute;
+    bottom: calc(var(--header-height)/2);
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.slide-btn {
+    width: 16px;
+    height: 16px;
+    background-color: var(--color-btn);
+    border-radius: 50%;
+    margin: 12px;
+    cursor: pointer;
+}
+
+.content__button:hover {
+    background-color: rgb(210, 98, 86);
+    box-shadow: 2px 2px 28px 2px rgba(228, 100, 88, 1);
+}
