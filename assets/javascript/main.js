@@ -36,10 +36,10 @@ const transBackground = function() {
     })
 }
 
-const defaultBackground = function() {            
+const defaultBackground = function() {        
     myIndex++;
     if (myIndex > backgrounds.length) {myIndex = 1}  
-    container.style.backgroundImage = `url(\'${backgrounds[myIndex - 1].path}\')`  
+    container.style.backgroundImage = `url(\'${backgrounds[myIndex - 1].path}\')`
     setTimeout(defaultBackground, 6000);
 }
 
@@ -47,5 +47,4 @@ let myIndex = 0
 defaultBackground()
 
 transBackground()
-
 

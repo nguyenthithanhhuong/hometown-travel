@@ -71,7 +71,6 @@ html {
     color: var(--text-color);
     font-size: 2.0rem;
     font-weight: 500;
-    font-family: var(--nav-list-font);
 }
 
 .navbar-link:hover {
@@ -93,6 +92,13 @@ html {
     /* background-image: url('/assets/img/slide-05.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
+    /* background: transparent;
+    /* TRANSITION */
+    /* -webkit-transition: background 1s;
+    -moz-transition: background 1s;
+    -o-transition: background 1s; */
+    /* transition: background 1s; */
+    transition: background-image 2s linear;
 }
 
 .content {
@@ -107,14 +113,12 @@ html {
 .content__title {
     font-size: 4.6rem;
     font-weight: 500;
-    font-family: var(--nav-list-font);
 }
 
 .content__description {
     font-size: 1.6rem;
     padding: 16px 0 36px 0;
     margin: 0;
-    font-family: var(--nav-list-font);
 }
 
 .content__button {
@@ -123,7 +127,6 @@ html {
     text-decoration: none;
     font-size: 1.8rem;
     font-weight: 500;
-    font-family: var(--nav-list-font);
     padding: 16px 32px;
     margin-top: 6px;
     border-radius: 5px;
