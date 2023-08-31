@@ -1,82 +1,3 @@
-:root {
-    --header-height: 120px;
-
-    --page-name-font: Brush Script MT;
-    --font-family: 'Lobster', cursive;
-
-    --text-color: #000;
-    --text-navlist-hover: #696969;
-
-    --background-color: rgb(80 86 128 / 26%);
-    --btn-color: rgba(80, 86, 128, 0.1);
-    --btn-hover-color: rgb(198, 101, 90);
-    --btn-hover-shadow-color: rgba(228, 100, 88, 1);
-    --slide-btn-color: #ccc;
-    --slide-btn-hover-color: #a9a9a9;
-}
-
-* {
-    box-sizing: inherit;
-}
-
-html {
-    font-size: 62.5%;
-    line-height: 1.6rem;
-    box-sizing: border-box;
-    color: var(--color-text);
-    font-family: var(--font-family);
-}
-
-.main {
-    overflow: hidden;
-}
-
-/* Header section */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10%;
-    height: var(--header-height);
-    color: var(--text-color);
-    backdrop-filter: blur(10px);
-    background-color: var(--background-color);
-    box-shadow:  1px 1px 60px 1px var(--background-color);
-}
-
-.page-name {
-    font-size: 5.8rem;
-    font-weight: 600;
-    font-family: var(--page-name-font);
-}
-
-.navbar-list {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 16px;
-}
-
-.navbar-item + .navbar-item{
-    padding-left: 24px;
-}
-
-.navbar-link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-size: 2.0rem;
-    font-weight: 500;
-}
-
-.navbar-link:hover {
-    color: var(--text-navlist-hover);
-}
-
 /* Container section */
 .container {
     position: fixed;
@@ -89,15 +10,8 @@ html {
     margin-right: auto;
     margin-top: var(--header-height);
     overflow: hidden;
-    /* background-image: url('/assets/img/slide-05.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
-    /* background: transparent;
-    /* TRANSITION */
-    /* -webkit-transition: background 1s;
-    -moz-transition: background 1s;
-    -o-transition: background 1s; */
-    /* transition: background 1s; */
     transition: background-image 2s linear;
 }
 
@@ -107,7 +21,6 @@ html {
     top: 18%;
     left: 10%;
     right: 10%;
-    overflow: hidden;
 }
 
 .content__title {
@@ -131,8 +44,9 @@ html {
     margin-top: 6px;
     border-radius: 5px;
     backdrop-filter: blur(10px);
-    background-color: var(--btn-color);
+    background-color: var(--btn-background-color-color);
     box-shadow:  2px 2px 8px 2px var(--background-color);
+    cursor: pointer;
 }
 
 .content__button:hover {

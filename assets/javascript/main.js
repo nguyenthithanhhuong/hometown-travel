@@ -4,6 +4,11 @@ const $$ = document.querySelectorAll.bind(document)
 const container = $('.container')
 const slideBar = $$('.slide-btn')
 
+const contentBtn = $('.content__button')
+const modal = $('.modal')
+const modalBtn = $('.body-close')
+const modalBody = $('.modal__body')
+
 const backgrounds = [
         {
             name: 'silde-01',
@@ -43,8 +48,17 @@ const defaultBackground = function() {
     setTimeout(defaultBackground, 6000);
 }
 
+contentBtn.onclick = function() {
+    modal.style.animation = 'fadeIn linear 0.2s'
+    modalBody.style.animation = 'growth linear 0.5s'
+    modal.style.display = 'flex'
+}
+
+modalBtn.onclick = function() {
+    modal.style.display = 'none'
+}
+
+
 let myIndex = 0
 defaultBackground()
-
 transBackground()
-

@@ -1,0 +1,51 @@
+/* container */
+.container {
+    background-color: var(--modal-body-color);
+    margin-top: var(--header-height);
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+}
+
+.container__img {
+    display: block;
+    max-width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* modal  */
+.modal__overlay {
+    background-color: var(--modal-body-color);
+}
+.modal__body {
+    width: 60%;
+    overflow: auto;
+    -ms-overflow-style: none; /* sử dụng Internet Explorer, Edge */
+    scrollbar-width: none; /* sử dụng Firefox */
+    overflow-y: scroll; 
+    margin: var(--header-height) auto 32px;
+    background-color: var(--modal-overlay-color);
+    background-color: var(--summary-content-color);
+}
+
+.modal__body::-webkit-scrollbar {
+    display: none; /*Chrome, Safari, and Opera */
+}
+
+.body-summary__img {
+    width: 100%;
+}
+
+.summary-content {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0;
+    padding: 6px 10%;
+    text-align: justify;
+}
+
+.body-summary__video {
+    width: 50%;
+    height: auto;
+}
