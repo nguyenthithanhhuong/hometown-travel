@@ -12,23 +12,23 @@ const modalBody = $('.modal__body')
 const backgrounds = [
         {
             name: 'silde-01',
-            path: './assets/img/slide-01.jpg'
+            path: './assets/img/background-home/slide-01.jpg'
         },
         {
             name: 'silde-02',
-            path: './assets/img/slide-02.jpg'
+            path: './assets/img/background-home/slide-02.jpg'
         },
         {
             name: 'silde-03',
-            path: './assets/img/slide-03.jpg'
+            path: './assets/img/background-home/slide-03.jpg'
         },
         {
             name: 'silde-04',
-            path: './assets/img/slide-04.jpg'
+            path: './assets/img/background-home/slide-04.jpg'
         },
         {
             name: 'silde-05',
-            path: './assets/img/slide-05.jpg'
+            path: './assets/img/background-home/slide-05.jpg'
         }
     ]
 
