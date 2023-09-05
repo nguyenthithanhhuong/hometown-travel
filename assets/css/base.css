@@ -86,9 +86,6 @@ html {
     color: var(--text-navlist-hover);
 }
 
-/* container section */
-
-
 /* modal section  */
 @keyframes fadeIn {
     from {
@@ -99,15 +96,6 @@ html {
     }
 }
 
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-
-}
 
 @keyframes growth {
     from {
@@ -118,15 +106,6 @@ html {
     }
 }
 
-@keyframes reduce {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(0);
-    }
-}
-
 .modal {
     display: none;
     position: fixed;
@@ -134,6 +113,8 @@ html {
     left: 0;
     right: 0;
     bottom: 0;
+    animation: fadeIn 1s linear;
+    transition: ease-in-out 1s;
 }
 
 .modal__overlay {
@@ -153,6 +134,8 @@ html {
     border-radius: 5px;
     background-color: var(--modal-body-color);
     line-height: 2.4rem;
+    animation: growth 1s linear;
+    transition: ease-in-out 1s;
 }
 
 .body-title {
@@ -169,7 +152,7 @@ html {
     font-size: 1.6rem;
     font-weight: 300;
     margin: 0;
-    padding: 6px 0;
+    padding: 6px 32px;
 }
 
 .body-summary {
@@ -183,6 +166,11 @@ html {
 .body-summary__img {
     width: 50%;
     border-radius: 4px;
+    padding: 0 32px;
+}
+
+.img-full {
+    padding: 0;
 }
 
 .summary-content {

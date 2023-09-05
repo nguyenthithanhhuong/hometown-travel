@@ -49,8 +49,6 @@ const defaultBackground = function() {
 }
 
 contentBtn.onclick = function() {
-    modal.style.animation = 'fadeIn linear 0.2s'
-    modalBody.style.animation = 'growth linear 0.5s'
     modal.style.display = 'flex'
 }
 

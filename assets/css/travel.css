@@ -1,12 +1,19 @@
 /* container */
 .container {
+    position: relative;
     background-color: var(--modal-body-color);
     margin-top: var(--header-height);
     width: 100%;
     height: calc(100vh - var(--header-height));
 }
 
-.container__img {
+.map {
+    width: 100%;
+    position: absolute;
+}
+
+.map__img {
+    position: relative;
     display: block;
     max-width: 80%;
     height: auto;
@@ -24,7 +31,9 @@
     -ms-overflow-style: none; /* sử dụng Internet Explorer, Edge */
     scrollbar-width: none; /* sử dụng Firefox */
     overflow-y: scroll; 
-    margin: var(--header-height) auto 32px;
+    /* padding: 16px 32px calc(16px + var(--btn-height)) 32px; */
+    padding: 0;
+    margin: var(--header-height) auto 0;
     background-color: var(--modal-overlay-color);
     background-color: var(--summary-content-color);
 }
@@ -33,8 +42,21 @@
     display: none; /*Chrome, Safari, and Opera */
 }
 
+.body-title {
+    margin: 16px 32px 0;
+}
+
 .body-summary__img {
     width: 100%;
+}
+
+.body-summary {
+    position: relative;
+}
+
+.body-summary__video {
+    position: absolute;
+    top: 0;
 }
 
 .summary-content {
@@ -48,4 +70,196 @@
 .body-summary__video {
     width: 50%;
     height: auto;
+    width: 34%;
+    height: 38%;
+    border-radius: 14px;
+    transform: rotate(-15.5deg);
+    object-fit: cover;
+    position: absolute;
+    top: 31%;
+    left: 10%;
 }
+
+
+/* pin , point  */
+.pin {
+    display: inline-block;
+    background-color: #838383;
+    width: 32px;
+    height: 32px;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    position: relative;
+    cursor: pointer;
+    transition: linear 0.4s;
+}
+.pin::after {
+    content: "";
+    display: block;
+    background-color: #585858;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    position: absolute;
+    left: 24%;
+    top: 26%;
+    transition: linear 0.4s;
+}
+.point {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #838383;
+    border-radius: 50%;
+    position: relative;
+    top: 12px;
+    left: -53%;
+    transform: rotateX(60deg);
+    transition: linear 0.4s;
+    cursor: pointer;
+}
+.point::after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: -8%;
+    animation: blur 1s linear infinite alternate;
+    transition: linear 0.4s;
+    cursor: pointer;
+}
+@keyframes pin {
+    0% {
+        transform: scale(1) translateY(0) rotate(-45deg);
+    }
+    25% {
+        transform: scale(1.1) translateY(-2px) rotate(-45deg);
+    }
+    50% {
+        transform: scale(1.2) translateY(-3px) rotate(-45deg);
+    }
+    75% {
+        transform: scale(1.3) translateY(-5px) rotate(-45deg);
+    }
+    100% {
+        transform: scale(1.4)  translateY(-6px) rotate(-45deg);
+    }
+}
+@keyframes point {
+    0% {
+        transform: scale(1) rotateX(60deg);
+    }
+    25% {
+        transform: scale(1.2) rotateX(60deg);
+    }
+    50% {
+        transform: scale(1.3) rotateX(60deg);
+    }
+    75% {
+        transform: scale(1.4) rotateX(60deg);
+    }
+    100% {
+        transform: scale(1.5) rotateX(60deg);
+    }
+}
+@keyframes blur {
+    0% {
+        transform: scale(1) rotate(60deg);
+        box-shadow: 1px 1px 5px 1px #838383;
+    }
+    25% {
+        transform: scale(1.2) rotate(60deg);
+        filter: none;
+    }
+    50% {
+        transform: scale(1.4) rotate(60deg);
+        filter: none;
+    }
+    75% {
+        transform: scale(1.6) rotate(60deg);
+        filter: none;
+    }
+    100% {
+        transform: scale(1.8) rotate(60deg);
+        filter: none;
+        box-shadow: 1px 1px 5px 1px #838383;
+    }
+}
+@keyframes blur01 {
+    0% {
+        transform: scale(1) rotate(60deg);
+        box-shadow: 1px 1px 5px 1px rgb(198, 101, 90);
+    }
+    25% {
+        transform: scale(1.2) rotate(60deg);
+        filter: none;
+    }
+    50% {
+        transform: scale(1.4) rotate(60deg);
+        filter: none;
+    }
+    75% {
+        transform: scale(1.6) rotate(60deg);
+        filter: none;
+    }
+    100% {
+        transform: scale(1.8) rotate(60deg);
+        filter: none;
+        box-shadow: 1px 1px 5px 1px rgb(198, 101, 90);
+    }
+}
+.location-item:hover .pin {
+    animation: pin 0.5s linear alternate;
+    animation-fill-mode: forwards;
+    background-color: rgb(198, 101, 90);
+}
+.location-item:hover .pin::after {
+    background-color: rgb(231, 136, 128);
+}
+.location-item:hover .point {
+    animation: point 0.5s linear alternate;
+    animation-fill-mode: forwards;
+    background-color: rgb(198, 101, 90);
+}
+.location-item:hover .point::after {
+    animation: blur01 1s linear infinite alternate;
+}
+
+.location-item {
+    position: absolute;
+    text-decoration: none;
+}
+
+#location-01 {
+    position: absolute;
+    top: 35%;
+    left: 30%;
+}
+
+#location-02 {
+    position: absolute;
+    top: 27%;
+    left: 47%;
+}
+
+#location-03 {
+    position: absolute;
+    top: 5.2%;
+    left: 46%;
+}
+
+#location-04 {
+    position: absolute;
+    top: 56%;
+    left: 52.2%;
+}
+
+#location-05 {
+    position: absolute;
+    top: 49%;
+    left: 61.6%;
+}
+
